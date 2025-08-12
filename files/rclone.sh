@@ -1,0 +1,1 @@
+rclone mount GoogleDrive: /mnt/gdrive/ --allow-other --allow-non-empty --uid 1000 --gid 100 --file-perms 0644 --dir-perms 0755 --vfs-cache-mode full --buffer-size 128M --drive-chunk-size 128M --vfs-read-chunk-size 128M --vfs-read-chunk-size-limit off --dir-cache-time 12h --poll-interval 1m --checkers 8 --transfers 16
