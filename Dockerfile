@@ -21,6 +21,7 @@ RUN pip install jupyterlab_execute_time jupyter_ai ollama langchain-ollama -q
 RUN apt update; apt install -y fuse3
 RUN /tmp/rclone_install.sh
 RUN mkdir -p /mnt/gdrive; chmod a+rwx /mnt /mnt/gdrive
+RUN chown -R jovyan:users /home/jovyan/.jupyter/lab
 
 USER jovyan
 

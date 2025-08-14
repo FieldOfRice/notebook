@@ -1,0 +1,9 @@
+
+books.tar.gz
+
+# use "curl https://rclone.org/install.sh" to get ./files/rclone_install.sh
+files/rclone_install.sh
+
+# use "https://jdk.java.net/archive/" to get "Linux/x64" ./files/openjdk-17.0.2_linux-x64_bin.tar.gz
+files/openjdk-17.0.2_linux-x64_bin.tar.gz
+
