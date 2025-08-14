@@ -17,7 +17,7 @@ RUN id
 RUN mkdir .config; cd .config; ln -s /tmp/notebook/rclone
 RUN cd /home/jovyan; mv work work_off; ln -s /tmp/notebook work
 RUN cd /opt; tar xzf /tmp/openjdk-17.0.2_linux-x64_bin.tar.gz; rm /tmp/openjdk-17.0.2_linux-x64_bin.tar.gz
-RUN pip install jupyterlab_execute_time jupyter_ai ollama langchain-ollama -q
+RUN pip install jupyterlab_execute_time jupyter_ai ollama langchain-ollama pipdeptree -q
 RUN apt update; apt install -y fuse3
 RUN /tmp/rclone_install.sh
 RUN mkdir -p /mnt/gdrive; chmod a+rwx /mnt /mnt/gdrive
@@ -27,4 +27,5 @@ USER jovyan
 
 # use "curl https://rclone.org/install.sh" to get ./files/rclone_install.sh
 # use "https://jdk.java.net/archive/" to get "Linux/x64" ./files/openjdk-17.0.2_linux-x64_bin.tar.gz
+# use "pipdeptree -r -p dask" to get dependecy tree
 

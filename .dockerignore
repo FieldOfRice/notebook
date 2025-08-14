@@ -1,2 +1,7 @@
 /[0-9]*
-books.tar.gz
+/*_books.tar.gz
+/pictures/
+/README.md
+/.git/
+/.gitignore
+/Dockerfile*
