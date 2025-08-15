@@ -1,6 +1,7 @@
 # Local JupyterLab with Ollama and Jupyter AI Extension
 
 This setup provides a **locally accessible JupyterLab** with integrated Ollama support and the Jupyter AI extension.
+The jupyter lab is using the dark-mode theme, and line numbers are already enabled.
 
 > **Note:** Rclone configuration is still pending.
 
