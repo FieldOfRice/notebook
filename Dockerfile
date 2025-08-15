@@ -2,7 +2,7 @@ FROM quay.io/jupyter/minimal-notebook@sha256:23c62f4ff7988996eb5271748a341adcecf
 # the above image seems from 2025-06-02T07:43:42
 ARG BUILD_DATE
 ARG BUILD_VERSION
-LABEL org.opencontainers.image.authors="thor42@my-private-garden.com" \
+LABEL org.opencontainers.image.authors="laofuke168@tutamail.com" \
       org.opencontainers.image.created=$BUILD_DATE \
       org.opencontainers.image.version=$BUILD_VERSION \
       org.opencontainers.image.description="my-private-garden.com jupyterlab openjdk-17-jdk"
