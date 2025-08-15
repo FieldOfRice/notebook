@@ -2,5 +2,4 @@
 *_books.tar.gz
 
 # use "curl https://rclone.org/install.sh" to get ./files/rclone_install.sh
-files/rclone_install.sh
 
