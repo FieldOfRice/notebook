@@ -5,7 +5,7 @@ ARG BUILD_VERSION
 LABEL org.opencontainers.image.authors="laofuke168@tutamail.com" \
       org.opencontainers.image.created=$BUILD_DATE \
       org.opencontainers.image.version=$BUILD_VERSION \
-      org.opencontainers.image.description="my-private-garden.com jupyterlab openjdk-17-jdk"
+      org.opencontainers.image.description="jupyterlab openjdk-17-jdk"
 USER root
 RUN apt-get update && apt-get install -y --no-install-recommends fuse3 openjdk-17-jdk && \
     apt-get clean && rm -rf /var/lib/apt/lists/* && \
