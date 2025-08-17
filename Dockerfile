@@ -9,7 +9,8 @@ LABEL org.opencontainers.image.authors="laofuke168@tutamail.com" \
 USER root
 RUN apt-get update && apt-get install -y --no-install-recommends fuse3 openjdk-17-jdk && \
     apt-get clean && rm -rf /var/lib/apt/lists/* && \
-    pip install --no-cache-dir -q jupyterlab_execute_time jupyter_ai ollama langchain-ollama pipdeptree
+    curl -LsSf https://astral.sh/uv/install.sh | sh && \
+    pip install --no-cache-dir -q jupyterlab_execute_time jupyter_ai ollama langchain-ollama
 
 # using static rclone version
 COPY ./files/rclone_install.sh /tmp
@@ -23,8 +24,8 @@ RUN mkdir -p .cache .config && ln -s /tmp/notebook/rclone .config/rclone && \
     mv work work_off && ln -s /tmp/notebook work
 
 # use "curl https://rclone.org/install.sh" to get ./files/rclone_install.sh
-# use "https://jdk.java.net/archive/" to get "Linux/x64" ./files/openjdk-17.0.2_linux-x64_bin.tar.gz
-# use "pipdeptree -r -p dask" to get dependecy tree
+# might use "https://jdk.java.net/archive/" to get "Linux/x64" ./files/openjdk-17.0.2_linux-x64_bin.tar.gz
+# use "uv pip tree" for dependecy tree
 # use "docker inspect --format='{{index .RepoDigests 0}}' quay.io/jupyter/minimal-notebook:latest" to pin base image
-# it's already using "HEALTHCHECK --interval=3s --timeout=1s --start-period=3s --retries=3 CMD /etc/jupyter/docker_healthcheck.py || exit 1" from base-notebook
+# from base-notebook we already have "HEALTHCHECK --interval=3s --timeout=1s --start-period=3s --retries=3 CMD /etc/jupyter/docker_healthcheck.py || exit 1"
 
