@@ -9,7 +9,6 @@ LABEL org.opencontainers.image.authors="laofuke168@tutamail.com" \
 USER root
 RUN apt-get update && apt-get install -y --no-install-recommends fuse3 openjdk-17-jdk && \
     apt-get clean && rm -rf /var/lib/apt/lists/* && \
-    curl -LsSf https://astral.sh/uv/install.sh | sh && \
     pip install --no-cache-dir -q jupyterlab_execute_time jupyter_ai ollama langchain-ollama
 
 # using static rclone version
@@ -20,8 +19,9 @@ RUN /tmp/rclone_install.sh && rm /tmp/rclone_install.sh && \
 USER jovyan
 WORKDIR /home/jovyan
 ADD ./files/config.tar .
-RUN mkdir -p .cache .config && ln -s /tmp/notebook/rclone .config/rclone && \
-    mv work work_off && ln -s /tmp/notebook work
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh && \
+    mkdir -p .cache .config && mv work work_off && ln -s /tmp/notebook work  && \
+    ln -s /tmp/notebook/rclone .config/rclone
 
 # use "curl https://rclone.org/install.sh" to get ./files/rclone_install.sh
 # might use "https://jdk.java.net/archive/" to get "Linux/x64" ./files/openjdk-17.0.2_linux-x64_bin.tar.gz
