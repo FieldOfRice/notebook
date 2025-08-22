@@ -9,3 +9,6 @@ docker exec -i notebooks bash -c "cd /home/jovyan/work/notebooks && tar cvzf - \
   data/firefox_bookmarks.json \
 " | pv > ${PREFIX}_books.tar.gz
 
+# ccencrypt abc.tar.gz
+# upload the *.cpt to github notebooks/data folder
+
