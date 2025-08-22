@@ -3,7 +3,7 @@
 This setup provides a **locally accessible JupyterLab** with integrated Ollama support and the Jupyter AI extension.
 The jupyter lab is using the dark-mode theme, and line numbers are enabled.
 
-> **Note:** Rclone configuration is still pending.
+> **Note:** Rclone configuration is still incomplete here.
 
 ## References
 
